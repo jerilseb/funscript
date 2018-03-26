@@ -21,7 +21,7 @@ function Lexer(input) {
   }
 
   function croak(msg) {
-    throw new Error(msg + "line:" + line + ":" + col);
+    throw new Error(msg + " line:" + line + ":" + col);
   }
 
   return {

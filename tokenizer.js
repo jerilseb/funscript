@@ -110,7 +110,7 @@ function Tokenizer(lexer) {
         type: "op",
         value: read_while(is_op_char)
       };
-    lexer.croak(`Can't handle character '${ch}' at `);
+    lexer.croak(`Can't handle character '${ch}' at`);
   }
 
   function peek() {

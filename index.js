@@ -2,9 +2,8 @@ const fs = require("fs");
 
 let contents = fs.readFileSync("input.fs", "utf-8");
 
-const lexer = require("./lexer")(contents);
-const tokenizer = require("./tokenizer")(lexer);
+const chars = require("./lexer")(contents);
+const tokens = require("./tokenizer")(chars);
+const program = require("./parser")(tokens);
 
-while (!tokenizer.eof()) {
-  console.log(tokenizer.next());
-}
+console.log(program);
