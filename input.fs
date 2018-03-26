@@ -2,6 +2,8 @@
 
 println("Hello World!");
 
-println(2 + 3 * 4);
+println(2 * 4);
 
-func(a,b) a + test(2,5);
+func(a,b) {
+    a + test(2,5)
+}

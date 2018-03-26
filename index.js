@@ -6,4 +6,4 @@ const chars = require("./lexer")(contents);
 const tokens = require("./tokenizer")(chars);
 const program = require("./parser")(tokens);
 
-console.log(program);
+console.log(JSON.stringify(program, null, "  "));

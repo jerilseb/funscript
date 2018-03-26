@@ -98,11 +98,20 @@ function parser(input) {
     return ret;
   }
 
+  function parse_function_body() {
+    if (is_punc("{")) {
+      input.next();
+      var exp = parse_expression();
+      skip_punc("}");
+      return exp;
+    }
+  }
+
   function parse_function() {
     return {
       type: "function",
       vars: delimited("(", ")", ",", parse_varname),
-      body: parse_expression()
+      body: parse_function_body()
     };
   }
 
