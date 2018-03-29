@@ -14,10 +14,14 @@ globalEnv.def("time", function(func) {
   }
 });
 
+globalEnv.def("println", function(txt) {
+  console.log(txt);
+});
+
 const chars = require("./lexer")(contents);
 const tokens = require("./tokenizer")(chars);
 const ast = require("./parser")(tokens);
 
 fs.writeFileSync("ast.json", JSON.stringify(ast, null, "  "));
 
-walker.evaluate(globalEnv, ast);
+walker.evaluate(ast, globalEnv);
